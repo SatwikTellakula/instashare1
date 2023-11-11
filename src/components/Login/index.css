@@ -1,0 +1,25 @@
+.instaContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.bg-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.loginClass {
+  width: 582px;
+  height: 372.99993896484375px;
+  top: 326px;
+  left: 160px;
+}
+.form-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.input-container {
+  display: flex;
+  flex-direction: column;
+}

@@ -1,0 +1,13 @@
+.profile {
+  width: 32px;
+  height: 32px;
+  top: 14px;
+  left: 24px;
+  border: 1.03px;
+  margin-right: 15px;
+}
+
+.profile-container {
+  display: flex;
+  flex-direction: row;
+}
