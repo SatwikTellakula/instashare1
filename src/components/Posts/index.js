@@ -7,14 +7,21 @@ import Post from '../Post'
 class Posts extends Component {
   state = {
     posts: [],
+    searchInput: '',
   }
 
   componentDidMount() {
     this.getPosts()
   }
 
+  updateSearchInput = searchValue => {
+    this.setState({searchInput: searchValue}, this.getPosts)
+  }
+
   getPosts = async () => {
-    const url = 'https://apis.ccbp.in/insta-share/posts'
+    const {searchInput} = this.state
+
+    const url = `https://apis.ccbp.in/insta-share/posts?search=${searchInput}`
     const jwtToken = Cookies.get('jwt_token')
     const options = {
       headers: {

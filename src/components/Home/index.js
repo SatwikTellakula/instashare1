@@ -6,12 +6,20 @@ import UserStories from '../UserStories'
 import Posts from '../Posts'
 
 class Home extends Component {
+  state = {
+    searchInput: '',
+  }
+
+  updateSearchInput = searchValue => {
+    this.setState({searchInput: searchValue})
+  }
+
   render() {
     return (
       <div>
-        <Header />
+        <Header updateSearchInput={this.updateSearchInput} />
         <UserStories />
-        <Posts />
+        <Posts updateSearchInput={this.updateSearchInput} />
       </div>
     )
   }
