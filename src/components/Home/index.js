@@ -22,12 +22,18 @@ class Home extends Component {
   }
 
   updateSearchInput = searchValue => {
+    const {searchInput} = this.state
     this.setState({searchInput: searchValue})
+    if (searchInput === '') {
+      this.setState({apiStatus: apiStatusConstants.initial})
+    }
   }
 
   getSearchResults = async () => {
     const {searchInput} = this.state
+    console.log(searchInput)
     const jwtToken = Cookies.get('jwt_token')
+    this.setState({apiStatus: apiStatusConstants.inProgress})
     const url = `https://apis.ccbp.in/insta-share/posts?search=${searchInput}`
     const options = {
       method: 'GET',
@@ -52,6 +58,9 @@ class Home extends Component {
         searchResults: formattedData,
         apiStatus: apiStatusConstants.success,
       })
+      //   console.log(formattedData)
+    } else {
+      this.setState({apiStatus: apiStatusConstants.failure})
     }
   }
 
