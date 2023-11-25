@@ -36,7 +36,6 @@ class UserStories extends Component {
 
   render() {
     const {storiesList} = this.state
-    console.log(storiesList)
     return (
       <div className="storieslist-container">
         {storiesList.map(userDetails => (

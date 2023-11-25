@@ -1,0 +1,9 @@
+.stories-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.story-image {
+  height: 70px;
+  width: 70px;
+}

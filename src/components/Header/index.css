@@ -1,0 +1,31 @@
+.nav-menu {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.search-input {
+  width: 200px;
+  height: 30px;
+}
+
+.header-search-button {
+  width: 50px;
+  height: 30px;
+}
+
+.menu-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.nav-item {
+  margin: 15px;
+  list-style-type: none;
+}
+
+.input-search-container {
+  display: flex;
+  flex-direction: row;
+  margin-left: 550px;
+}
