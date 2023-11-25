@@ -58,7 +58,11 @@ class Home extends Component {
         searchResults: formattedData,
         apiStatus: apiStatusConstants.success,
       })
+<<<<<<< HEAD
       console.log(formattedData)
+=======
+      //   console.log(formattedData)
+>>>>>>> dc755fa18d7adcc0a6b77857aa681b5eac994701
     } else {
       this.setState({apiStatus: apiStatusConstants.failure})
     }
