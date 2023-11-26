@@ -75,7 +75,7 @@ class UserProfile extends Component {
       <div>
         <ul className="posts-view-container">
           {posts.map(post => (
-            <li>
+            <li className="user-profile-post">
               <img className="post-image" src={post.image} alt="post" />
             </li>
           ))}
@@ -97,10 +97,26 @@ class UserProfile extends Component {
           />
           <div>
             <p>{userProfileData.userName}</p>
-            <div>
-              <p>{userProfileData.postsCount}</p>
-              <p>{userProfileData.followersCount}</p>
-              <p>{userProfileData.followingCount}</p>
+            <div style={{display: 'flex', flexDirection: 'row'}}>
+              <p className="count-params">
+                <span style={{color: 'black', fontWeight: 'bold'}}>
+                  {userProfileData.postsCount}{' '}
+                </span>
+                posts
+              </p>
+              <p className="count-params">
+                <span style={{color: 'black', fontWeight: 'bold'}}>
+                  {userProfileData.followersCount}
+                  {'  '}
+                </span>
+                followers
+              </p>
+              <p className="count-params">
+                <span style={{color: 'black', fontWeight: 'bold'}}>
+                  {userProfileData.followingCount}{' '}
+                </span>
+                following
+              </p>
             </div>
             <p>{userProfileData.userId}</p>
             <p>{userProfileData.userBio}</p>

@@ -40,10 +40,6 @@ class Post extends Component {
       body: JSON.stringify(likedRequestBody),
     }
 
-    // const response = await fetch(likedPostUrl, options)
-    // const fetchedData = await response.json()
-
-    // console.log(fetchedData)
     const response = await fetch(likedPostUrl, options)
     const fetchedData = await response.json()
 
@@ -77,27 +73,39 @@ class Post extends Component {
           <img src={postDetails.image_url} alt="imageU" />
           <div>
             {!isLiked && (
-              <button
-                type="button"
-                onClick={this.toggleLike}
-                className="user-post-button"
-              >
-                <BsHeart size={20} color="#262626" />
-              </button>
+              <>
+                <button
+                  type="button"
+                  onClick={this.toggleLike}
+                  className="user-post-button"
+                >
+                  <BsHeart size={20} color="#262626" />
+                </button>
+
+                <FaRegComment size={20} color="#475569" />
+                <BiShareAlt size={20} color="475569" />
+                <p>{likesCount} likes</p>
+              </>
             )}
             {isLiked && (
-              <button
-                type="button"
-                onClick={this.toggleLike}
-                className="user-post-button"
-              >
-                <BsHeartFill size={20} color="red" />
-              </button>
+              <>
+                <button
+                  type="button"
+                  onClick={this.toggleLike}
+                  className="user-post-button"
+                >
+                  <BsHeartFill
+                    className="heart-icon-container"
+                    size={20}
+                    color="red"
+                  />
+                </button>
+                <FaRegComment size={20} color="#475569" />
+                <BiShareAlt size={20} color="475569" />
+                <p>{parseInt(likesCount) + 1} likes</p>
+              </>
             )}
-            <FaRegComment size={20} color="#475569" />
-            <BiShareAlt size={20} color="475569" />
           </div>
-          <p>{likesCount} likes</p>
           <p>{postDetails.caption}</p>
           {comments.map(comment => (
             <p key={comment.user_id} className="comments">

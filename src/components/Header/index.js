@@ -1,5 +1,8 @@
-import {Link} from 'react-router-dom'
+import {Link, withRouter} from 'react-router-dom'
+
 import {FaSearch} from 'react-icons/fa'
+import Cookies from 'js-cookie'
+
 import './index.css'
 
 const Header = props => {
@@ -12,6 +15,12 @@ const Header = props => {
   const onClickSearchButton = () => {
     const {getSearchResults} = props
     getSearchResults()
+  }
+
+  const onClickLogOut = () => {
+    const {history} = props
+    history.replace('/login')
+    Cookies.remove('jwt_token')
   }
 
   return (
@@ -47,7 +56,7 @@ const Header = props => {
           <li className="nav-item">
             <Link to="/profile">Profile</Link>
           </li>
-          <button type="button" className="nav-item">
+          <button type="button" className="nav-item" onClick={onClickLogOut}>
             Logout
           </button>
         </div>
@@ -55,4 +64,4 @@ const Header = props => {
     </nav>
   )
 }
-export default Header
+export default withRouter(Header)

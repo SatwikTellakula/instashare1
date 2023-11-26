@@ -3,7 +3,6 @@ import './index.css'
 const Profile = props => {
   const {profileData} = props
   const {
-    userId,
     userName,
     profilePic,
     followersCount,
@@ -18,34 +17,51 @@ const Profile = props => {
     <>
       <div>
         <img src={profilePic} alt="profilePic" />
-        <div>
-          <p>{userName}</p>
+        <div style={{display: 'flex', flexDirection: 'row'}}>
+          <p className="count-params">
+            <span style={{color: 'black', fontWeight: 'bold'}}>
+              {postsCount}{' '}
+            </span>
+            posts
+          </p>
+          <p className="count-params">
+            <span style={{color: 'black', fontWeight: 'bold'}}>
+              {followersCount}
+              {'  '}
+            </span>
+            followers
+          </p>
+          <p className="count-params">
+            <span style={{color: 'black', fontWeight: 'bold'}}>
+              {followingCount}{' '}
+            </span>
+            following
+          </p>
+        </div>
+        <p>{userName}</p>
+        <p>{userBio}</p>
+      </div>
+      <div className="stories-container">
+        {stories.map(eachStory => (
           <div>
-            <p>{postsCount}</p>
-            <p>{followersCount}</p>
-            <p>{followingCount}</p>
+            <img
+              src={eachStory.image}
+              alt="storyImage"
+              className="story-image"
+            />
           </div>
-          <p>{userId}</p>
-          <p>{userBio}</p>
-        </div>
-        <div className="stories-container">
-          {stories.map(eachStory => (
-            <div>
-              <img
-                src={eachStory.image}
-                alt="storyImage"
-                className="story-image"
-              />
-            </div>
-          ))}
-        </div>
-        <div>
-          {posts.map(eachPost => (
-            <div className="stories-container" key={eachPost.id}>
-              <img src={eachPost.image} alt="storyImage" />
-            </div>
-          ))}
-        </div>
+        ))}
+      </div>
+      <div className="stories-container">
+        {posts.map(eachPost => (
+          <div>
+            <img
+              src={eachPost.image}
+              alt="storyImage"
+              className="profile-post-image"
+            />
+          </div>
+        ))}
       </div>
     </>
   )

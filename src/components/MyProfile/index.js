@@ -90,7 +90,12 @@ class MyProfile extends Component {
 
   renderMyProfileView = () => {
     const {profile} = this.state
-    return <Profile profileData={profile} />
+    return (
+      <>
+        <Header />
+        <Profile profileData={profile} />
+      </>
+    )
   }
 
   render() {

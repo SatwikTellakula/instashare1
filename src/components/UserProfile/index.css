@@ -15,8 +15,8 @@
 }
 
 .post-image {
-  width: 118px;
-  height: 118px;
+  width: 250px;
+  height: 250px;
 }
 
 .user-profile-container {
@@ -48,4 +48,12 @@
   width: 70px;
   height: 70px;
   border-radius: 50%;
+}
+
+.user-profile-post {
+  list-style-type: none;
+}
+
+.count-params {
+  margin-right: 30px;
 }
