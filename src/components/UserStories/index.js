@@ -1,5 +1,6 @@
 import {Component} from 'react'
 import Cookies from 'js-cookie'
+
 import UserStory from '../UserStory'
 import './index.css'
 
@@ -37,7 +38,7 @@ class UserStories extends Component {
   render() {
     const {storiesList} = this.state
     return (
-      <div className="storieslist-container">
+      <div className="storiesList-container">
         {storiesList.map(userDetails => (
           <UserStory userData={userDetails} />
         ))}

@@ -1,6 +1,7 @@
 import {Component} from 'react'
 import Cookies from 'js-cookie'
 import './index.css'
+import {Redirect} from 'react-router-dom'
 
 class Login extends Component {
   state = {
@@ -85,17 +86,22 @@ class Login extends Component {
 
   render() {
     const {showSubmitError, errorMsg} = this.state
+    const jwtToken = Cookies.get('jwt_token')
+    if (jwtToken !== undefined) {
+      return <Redirect to="/" />
+    }
+
     return (
       <div className="bg-container">
         <img
           src="https://res.cloudinary.com/dubxsexua/image/upload/v1675228708/OBJECTS_x275ro.png"
           className="loginClass"
-          alt="img1"
+          alt="website login"
         />
         <div className="instaContainer">
           <img
             src="https://res.cloudinary.com/dubxsexua/image/upload/v1676263506/Standard_Collection_8_t6amyf.png"
-            alt="img2"
+            alt="website logo"
           />
           <h1>Insta Share</h1>
           <form className="form-container" onSubmit={this.onSubmitForm}>

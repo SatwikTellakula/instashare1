@@ -92,7 +92,7 @@ class UserProfile extends Component {
         <div className="user-profile-success-view-container">
           <img
             src={userProfileData.profilePic}
-            alt="profilePic"
+            alt="user profile"
             className="user-profile-pic"
           />
           <div>
@@ -123,9 +123,13 @@ class UserProfile extends Component {
           </div>
         </div>
         <div>
-          {userProfileData.stories.map(story => (
-            <img src={story.image} alt="story" className="story-image" />
-          ))}
+          <ul>
+            {userProfileData.stories.map(story => (
+              <li style={{listStyleType: 'none'}}>
+                <img src={story.image} alt="story" className="story-image" />
+              </li>
+            ))}
+          </ul>
           <hr className="divider-line" />
           <div className="user-profile-posts-section">
             <BsGrid3X3 className="posts-grid-icon" />

@@ -7,6 +7,7 @@ import Home from './components/Home'
 import UserProfile from './components/UserProfile'
 
 import MyProfile from './components/MyProfile'
+import NotFound from './components/NotFound'
 
 const App = () => (
   <BrowserRouter>
@@ -15,6 +16,7 @@ const App = () => (
       <ProtectedRoute exact path="/" component={Home} />
       <ProtectedRoute exact path="/users/:userId" component={UserProfile} />
       <ProtectedRoute exact path="/profile" component={MyProfile} />
+      <NotFound />
     </Switch>
   </BrowserRouter>
 )
