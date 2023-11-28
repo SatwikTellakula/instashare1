@@ -84,7 +84,7 @@ class Post extends Component {
 
                 <FaRegComment size={20} color="#475569" />
                 <BiShareAlt size={20} color="475569" />
-                <p>{likesCount} likes</p>
+                <p className="likes">{likesCount} likes</p>
               </>
             )}
             {isLiked && (
@@ -102,15 +102,15 @@ class Post extends Component {
                 </button>
                 <FaRegComment size={20} color="#475569" />
                 <BiShareAlt size={20} color="475569" />
-                <p>{parseInt(likesCount) + 1} likes</p>
+                <p className="likes">{parseInt(likesCount) + 1} likes</p>
               </>
             )}
           </div>
           <p>{postDetails.caption}</p>
           {comments.map(comment => (
             <p key={comment.user_id} className="comments">
-              <span className="commented-user">{comment.user_name} </span>
-              <span className="user-comment">{comment.comment}</span>
+              <span className="likes">{comment.user_name} </span>
+              <span>{comment.comment}</span>
             </p>
           ))}
           <p className="created-date">{createdAt}</p>

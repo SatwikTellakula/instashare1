@@ -1,5 +1,6 @@
 import {Component} from 'react'
 import Cookies from 'js-cookie'
+import './index.css'
 
 import Header from '../Header'
 
@@ -70,18 +71,18 @@ class Home extends Component {
 
     if (searchInput === '') {
       return (
-        <>
+        <div className="Home-Container">
           <Header
             searchInput={searchInput}
             updateSearchInput={this.updateSearchInput}
           />
           <UserStories />
           <Posts />
-        </>
+        </div>
       )
     }
     return (
-      <div>
+      <div className="Home-Container">
         <Header
           searchInput={searchInput}
           updateSearchInput={this.updateSearchInput}

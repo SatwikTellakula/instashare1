@@ -4,7 +4,7 @@ const UserStory = props => {
   const {userData} = props
   const {userName, storyUrl} = userData
   return (
-    <div>
+    <div className="user-story-container">
       <img src={storyUrl} alt="" className="img-specifications" />
       <p className="text">{userName}</p>
     </div>

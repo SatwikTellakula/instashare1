@@ -24,7 +24,7 @@ const Header = props => {
   }
 
   return (
-    <nav>
+    <nav className="bg-container1">
       <ul className="nav-menu">
         <li className="nav-menu">
           <img
@@ -56,7 +56,11 @@ const Header = props => {
           <li className="nav-item">
             <Link to="/my-profile">Profile</Link>
           </li>
-          <button type="button" className="nav-item" onClick={onClickLogOut}>
+          <button
+            type="button"
+            className="nav-item button"
+            onClick={onClickLogOut}
+          >
             Logout
           </button>
         </div>

@@ -1,11 +1,26 @@
 .instaContainer {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  left: 57.22%;
+  right: 11.11%;
+  top: 26.07%;
+  bottom: 26.07%;
+  background-color: #fefeff;
+  box-shadow: 0px 8px 40px rgba(7, 7, 7, 0.08);
+  border-radius: 8px;
+  padding: 20px;
+  width: 456px;
+  height: 490px;
+  justify-content: center;
 }
 
 .bg-container {
   display: flex;
   flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
 .loginClass {
@@ -13,6 +28,7 @@
   height: 372.99993896484375px;
   top: 326px;
   left: 160px;
+  margin-right: 70px;
 }
 .form-container {
   display: flex;
@@ -22,4 +38,17 @@
 .input-container {
   display: flex;
   flex-direction: column;
+  margin-top: 20px;
+}
+
+.login-button {
+  background: #4094ef;
+  border-radius: 8px;
+  padding: 8px;
+  border-width: 0px;
+  left: 0px;
+  right: 0px;
+  top: 0px;
+  bottom: 0px;
+  margin-top: 30px;
 }

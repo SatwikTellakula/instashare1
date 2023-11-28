@@ -1,0 +1,7 @@
+.Home-Container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: left;
+  margin-left: 50px;
+}

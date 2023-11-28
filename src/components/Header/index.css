@@ -29,3 +29,21 @@
   flex-direction: row;
   margin-left: 550px;
 }
+
+.button {
+  background-color: #4094ef;
+  border-width: 0px;
+  color: white;
+  border-radius: 8px;
+  width: 86px;
+  height: 32px;
+}
+
+.bg-container1 {
+  margin-bottom: 40px;
+}
+
+.header-website-logo {
+  width: 54px;
+  margin-right: 10px;
+}
