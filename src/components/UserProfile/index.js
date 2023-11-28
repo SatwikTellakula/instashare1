@@ -123,7 +123,7 @@ class UserProfile extends Component {
           </div>
         </div>
         <div>
-          <ul>
+          <ul className="user-stories-list-container">
             {userProfileData.stories.map(story => (
               <li style={{listStyleType: 'none'}}>
                 <img src={story.image} alt="story" className="story-image" />

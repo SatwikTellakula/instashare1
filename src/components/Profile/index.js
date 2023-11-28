@@ -1,7 +1,7 @@
 import './index.css'
 
 const Profile = props => {
-  const {profileData} = props
+  const {profileData, owner} = props
   const {
     userName,
     profilePic,
@@ -41,28 +41,34 @@ const Profile = props => {
         <p>{userName}</p>
         <p>{userBio}</p>
       </div>
-      <div className="stories-container">
-        {stories.map(eachStory => (
-          <div>
-            <img
-              src={eachStory.image}
-              alt="storyImage"
-              className="story-image"
-            />
-          </div>
-        ))}
-      </div>
-      <div className="stories-container">
-        {posts.map(eachPost => (
-          <div>
-            <img
-              src={eachPost.image}
-              alt="storyImage"
-              className="profile-post-image"
-            />
-          </div>
-        ))}
-      </div>
+      <ul className="stories-container">
+        {stories.map(eachItem => {
+          const {id, image} = eachItem
+          return (
+            <li className="up-story-item" key={id}>
+              <img
+                className="up-story-image"
+                alt={`${owner} story`}
+                src={image}
+              />
+            </li>
+          )
+        })}
+      </ul>
+      <ul className="stories-container">
+        {posts.map(eachItem => {
+          const {id, image} = eachItem
+          return (
+            <li className="up-post-container" key={id}>
+              <img
+                className="up-post-image"
+                alt={`${owner} post`}
+                src={image}
+              />
+            </li>
+          )
+        })}
+      </ul>
     </>
   )
 }

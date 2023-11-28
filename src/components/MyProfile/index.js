@@ -93,7 +93,7 @@ class MyProfile extends Component {
     return (
       <>
         <Header />
-        <Profile profileData={profile} />
+        <Profile profileData={profile} owner="my" />
       </>
     )
   }
