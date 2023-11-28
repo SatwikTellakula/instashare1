@@ -15,7 +15,7 @@ const App = () => (
       <Route exact path="/login" component={Login} />
       <ProtectedRoute exact path="/" component={Home} />
       <ProtectedRoute exact path="/users/:userId" component={UserProfile} />
-      <ProtectedRoute exact path="/profile" component={MyProfile} />
+      <ProtectedRoute exact path="/my-profile" component={MyProfile} />
       <NotFound />
     </Switch>
   </BrowserRouter>
